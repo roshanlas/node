@@ -1,6 +1,13 @@
 name: Test Github Actions
 
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
 
 env:
   NODE_VERSION: 12.x
@@ -22,3 +29,12 @@ jobs:
 
       - name: Echo Details
         run: echo "${{ toJson(github) }}"
+
+      - name: Hello world action step
+        id: hello
+        uses: roshanlas/test-slack-action@v1
+        with:
+          who-to-greet: 'Dr. Ernst'
+
+      - name: Get the output time
+        run: echo "The time was ${{ toJson(steps.hello.outputs) }}"
