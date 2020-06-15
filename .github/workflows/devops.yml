@@ -19,13 +19,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      # - name: Setup Node.js ${{ env.NODE_VERSION }}
+      #   uses: actions/setup-node@v1
+      #   with:
+      #     node-version: ${{ env.NODE_VERSION }}
           
-      - name: Environment Information
-        run: npx envinfo
+      # - name: Environment Information
+      #   run: npx envinfo
 
       # - name: Echo Details
       #   run: echo "${{ toJson(github) }}"
@@ -34,7 +34,9 @@ jobs:
         id: hello
         uses: roshanlas/test-slack-action@v1
         with:
-          who-to-greet: 'Dr. Ernst'
+          slack-token: ${{ secrets.SLACK_DDBOT_TOKEN }}
+          slack-secret: ${{ secrets.SLACK_DDBOT_SECRET }}
+          slack-channel-id: "${{ secrets.SLACK_DDBOT_CHANNEL }}"
 
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      # - name: Get the output time
+      #   run: echo "The time was ${{ steps.hello.outputs.time }}"
