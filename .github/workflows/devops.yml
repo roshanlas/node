@@ -27,8 +27,8 @@ jobs:
       - name: Environment Information
         run: npx envinfo
 
-      - name: Echo Details
-        run: echo "${{ toJson(github) }}"
+      # - name: Echo Details
+      #   run: echo "${{ toJson(github) }}"
 
       - name: Hello world action step
         id: hello
