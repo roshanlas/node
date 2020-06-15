@@ -23,10 +23,8 @@ jobs:
       #   uses: actions/setup-node@v1
       #   with:
       #     node-version: ${{ env.NODE_VERSION }}
-          
       # - name: Environment Information
       #   run: npx envinfo
-
       # - name: Echo Details
       #   run: echo "${{ toJson(github) }}"
 
