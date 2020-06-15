@@ -30,7 +30,7 @@ jobs:
 
       - name: Hello world action step
         id: hello
-        uses: roshanlas/test-slack-action@v1.1.2
+        uses: roshanlas/test-slack-action@v1.1.3
         with:
           slack-token: ${{ secrets.SLACK_DDBOT_TOKEN }}
           slack-secret: ${{ secrets.SLACK_DDBOT_SECRET }}
