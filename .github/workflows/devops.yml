@@ -37,4 +37,4 @@ jobs:
           who-to-greet: 'Dr. Ernst'
 
       - name: Get the output time
-        run: echo "The time was ${{ toJson(steps.hello.outputs) }}"
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
